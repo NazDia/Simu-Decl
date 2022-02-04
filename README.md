@@ -15,12 +15,14 @@ Los niños ocupan solo una casilla. Ellos en el turno del ambiente se mueven, si
 Se tomaron dos formas de modelar los agentes, los cuales serían los Robots de Casa, se debe tomar en cuenta de que en general son agentes puramente reactivos, pués éstos actúan usando la información del ambiente en el momento sin tener registro de las acciones previamente realizadas, también son agentes proactivos, ya que tienen una meta trazada, la cuál es mantener la casa lo más limpia posible (ya sea limpiando o poniendo niños en el corral para evitar que se genere más suciedad). Éste patrón se usó en un modelo multiagente (varios robots). Se tomaron dos formas de implementar el modelo, si bien tienen una pequeña diferencia, ambos tienen en común que siempre buscarán el elemento del ambiente objetivo mas cercano y su acción dependerá de cuál sea el elemento alcanzado, si es un niño procederá a llevarlo al corral, si es suciedad, lo limpiará.
 
 Diferencias entre los modelos:
+
 	• En el primer modelo se toma la acción base tal y como fue definida sin ningún cambio, cada robot perseguirá el objetivo mas cercano.
 
 	• En el segundo modelo los robots ignorarán los objetivos de otros robots e irán a por el siguiente objetivo libre. Si un robot no tiene objetivo, no se moverá.
 
 ## Experimentos:
 Para realizar los experimentos, en el archivo 'config.cfg' se fijan los valores:
+
 	• Semilla (El programa funciona aleatoriamente, pero depende de la semilla que se pase de parametro)
 
 	• Dimensiones del tablero (Primero la X y después la Y, en líneas distintas)
@@ -35,12 +37,12 @@ Para realizar los experimentos, en el archivo 'config.cfg' se fijan los valores:
 
 	• Cantidad de robots
 
-	• El modelo a usar (0 para que no exista comunicación, cualquier
-otro número para que exista)
+	• El modelo a usar (0 para que no exista comunicación, cualquier otro número para que exista)
 
 	• Cantidad de turnos que ocurrirán en la simulación
 
 Con los datos pasados como argumentos se simula el comportamiento de un ambiente creado aleatoriamente con la semilla pasada, a partir de aqui se ejecutan los cambios por los agentes y los cambios del ambiente en los turnos dados, imprimiendo en consola los estados por los que va pasando el tablero, de forma que los elementos del tablero son simbolizados de la siguiente manera:
+
 	• Niño libre -> '@'
 
 	• Casilla en la cuál hay un robot con un niño cargado -> '&' (tiene mayor prioridad para mostrarse)
